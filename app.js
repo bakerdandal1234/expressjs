@@ -36,7 +36,7 @@ liveReloadServer.server.once("connection", () => {
 
 mongoose
   .connect(
-    process.env.Mongo_url
+    process.env.Mongo_url,{ useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
     app.listen(port, () => {
